@@ -1,14 +1,6 @@
 .mapWrapper {
     display: flex;
     justify-content: center;
-<<<<<<< HEAD
-}
-
-.info {
-  display: flex;
-  margin: 20px;
-}
-=======
     flex-wrap: wrap;
     padding-bottom: 50px;
 }
@@ -17,4 +9,3 @@
     text-align: justify;
     padding: 30px;
 }
->>>>>>> b3f298a97fc4d3df03abbdcb07932d426b830d87

@@ -6,6 +6,8 @@
 }
 .footer .container {
     text-align: center;
+    position: relative;
+    margin-top: 25px;
 }
 
 @media screen and (max-width: 600px) {
