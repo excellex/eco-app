@@ -20,7 +20,7 @@ function App() {
           <Route exact path='/signup' component={SignUpPage} />
           <Route exact path='/dashboard' component={Dashboard} />
         </Switch>
-        <Footer />
+        {/* <Footer /> */}
       </div>
   );
 }

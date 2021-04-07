@@ -1,2 +1,2 @@
 
-module.exports = require('./index.controller')
+module.exports = require('./controller.index')

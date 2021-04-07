@@ -22,7 +22,6 @@ const BarcodeScanner = ({ scanned, setScanned }) => {
               onUpdate={(err, result) => {
                 if (result) {
                   setScanned(false);
-                  console.log(result.text);
                   dispatch(addBarcodeAC(result.text));
                 }
               }}

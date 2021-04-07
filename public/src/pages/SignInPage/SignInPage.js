@@ -1,9 +1,10 @@
 import React from 'react';
+import AddButton from '../../components/AddButton';
 
 const SignInPage = () => {
   return (
     <div>
-      Sign in
+      <AddButton />
     </div>
   );
 };
