@@ -23,3 +23,24 @@ module.exports.signUp = async (req, res) => {
     res.send({ message: 'Server error' })
   }
 }
+
+module.exports.signIn = async (req, res) => {
+
+  try {
+    const { username, password } = req.body;
+    const user = await User.findOne({ username });
+
+    if (!user) {
+      return res.status(404).json({ message: 'There is no such user' })
+    }
+    const isPassValid = bcrypt.compareSync(password, user.password);
+    if (!isPassValid) {
+      return res.status(404).json({ message: 'Invalid password' })
+    }
+    const token = jwt.sign({ id: user.id }, process.env.SECRET, { expiresIn: '1d' });
+    return res.json({ success: true, token, user: { _id: user._id, username: user.username } })
+
+  } catch (e) {
+    res.send({ success: false, message: 'Server error' })
+  }
+}

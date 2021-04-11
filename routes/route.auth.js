@@ -19,6 +19,6 @@ router.post('/signup',
   // (req,res)=> {res.send(req.body)}
 )
 
-// router.post('/signin', controller.signIn)
+router.post('/signin', controller.signIn)
 
 module.exports = router
