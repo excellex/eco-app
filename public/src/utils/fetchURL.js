@@ -1,8 +1,7 @@
-const URL = 'http://192.168.90.245:3001'
-// const URL = "https://eco-app-client.herokuapp.com";
-// const URL = "";
-export const taresURL = `${URL}/tares/`;
-export const categoriesURL = `${URL}/categories/`;
-export const materialsURL = `${URL}/materials/`;
-export const addTareURL = `${URL}/addtare/`;
-export const addPlaceURL = `${URL}/addplace/`;
+// const URL = process.env.REACT_APP_LOCAL
+const URL = process.env.REACT_APP_REMOTE;
+export const taresURL = `${URL}tares/`;
+export const categoriesURL = `${URL}categories/`;
+export const materialsURL = `${URL}materials/`;
+export const addTareURL = `${URL}addtare/`;
+export const addPlaceURL = `${URL}addplace/`;

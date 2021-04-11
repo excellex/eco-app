@@ -11,6 +11,7 @@ import { Container } from 'react-bootstrap';
 
 
 function App() {
+  console.log(process.env.REACT_APP_REMOTE);
   return (
       <div style={{position: 'relative'}} >
         <Header />
