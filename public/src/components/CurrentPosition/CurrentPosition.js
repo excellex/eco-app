@@ -8,8 +8,8 @@ const CurrentPosition = () => {
     if (navigator.geolocation) {
       navigator.geolocation.watchPosition((position) => {
         dispatch(addCurrentPositionAC({
-          latitude: (position.coords.latitude).toString().slice(0,7),
-          longitude: (position.coords.longitude).toString().slice(0,7),
+          latitude: (position.coords.latitude).toString(),//.slice(0,7),
+          longitude: (position.coords.longitude).toString(),//.slice(0,7),
         }));
       });
     }

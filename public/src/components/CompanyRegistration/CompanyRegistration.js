@@ -8,11 +8,11 @@ import {
 } from '../../redux/actionCreator';
 
 export default function CompanyRegistration({ data }) {
+  const dispatch = useDispatch();
   const [errorState, setErrorState] = useState(false);
   const storeMaterials = useSelector((store) => store.materials);
   const storeCategories = useSelector((store) => store.categories);
   const currentPosition = useSelector(store => store.currentPosition);
-  const dispatch = useDispatch();
   const long = useRef();
   const lat = useRef();
   const address = useRef();
@@ -38,6 +38,7 @@ export default function CompanyRegistration({ data }) {
 
     try {
       dispatch(featchAddCompanyAC(obj)).catch((e) => setErrorState(true));
+
     } catch (e) {
       setErrorState(true);
     }
@@ -72,11 +73,11 @@ export default function CompanyRegistration({ data }) {
             -- Материал --
           </option>
           {storeMaterials &&
-          storeMaterials.map((material) => (
-            <option key={uuidv4()} value={material.name}>
-              {material.name}
-            </option>
-          ))}
+            storeMaterials.map((material) => (
+              <option key={uuidv4()} value={material.name}>
+                {material.name}
+              </option>
+            ))}
         </select>
         <select
           ref={categories}
@@ -88,11 +89,11 @@ export default function CompanyRegistration({ data }) {
             -- Категории --
           </option>
           {storeCategories &&
-          storeCategories.map((category) => (
-            <option key={uuidv4()} value={category.name}>
-              {category.name}
-            </option>
-          ))}
+            storeCategories.map((category) => (
+              <option key={uuidv4()} value={category.name}>
+                {category.name}
+              </option>
+            ))}
         </select>
         <div className="modal-footer">
           <button
