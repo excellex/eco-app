@@ -5,7 +5,7 @@ module.exports = function (app) {
   const indexRouter = require('../routes/route.index')
   const authRouter = require('../routes/route.auth')
   // const fileRouter = require('./routes/route.file')
-  app.use(require('cors')())
+  // app.use(require('cors')())
   app.use(express.urlencoded({ extended: true }))
   app.use(express.json())
   app.use(express.static(path.join(__dirname, '..', 'public', 'build')))
