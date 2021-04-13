@@ -11,7 +11,7 @@ import { Container } from 'react-bootstrap';
 
 
 function App() {
-  console.log(process.env.REACT_APP_URL);
+  console.log(process.env.REACT_APP_TEST);
   return (
       <div style={{position: 'relative'}} >
         <Header />

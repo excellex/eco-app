@@ -1,4 +1,3 @@
-// const URL = process.env.REACT_APP_LOCAL
 const URL = process.env.REACT_APP_URL;
 export const taresURL = `${URL}tares/`;
 export const categoriesURL = `${URL}categories/`;

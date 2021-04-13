@@ -56,17 +56,6 @@ const BarcodeForm = ({ scanned, setScanned }) => {
             />
           </Form>
         )}
-        {/* {
-          isEmpty
-            ?
-            <Form>
-              <Form.Control type="text" defaultValue='Отсканируйте штрих-код' readOnly onChange={null} />
-            </Form>
-            :
-            <Form>
-              <Form.Control ref={formValue} type='number' value={barcode} readOnly onChange={null} />
-            </Form>
-        } */}
       </Col>
     </>
   );

@@ -3,8 +3,6 @@ const mongoose = require('mongoose')
 require('dotenv').config()
 require('./middleware')(app)
 
-// app.use(require('express').json())
-
 const listen = async () => {
   try {
     await mongoose.connect(process.env.DB, {
@@ -20,3 +18,6 @@ const listen = async () => {
 }
 
 listen()
+
+
+
