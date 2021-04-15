@@ -1,4 +1,4 @@
-import { GET_RECEPTION_POINTS } from '../actionTypes';
+import { GET_RECEPTION_POINTS } from '../types';
 
 export function getReceptionPoints(state = {}, action) {
   switch (action.type) {

@@ -1,4 +1,4 @@
-import { ADD_COMPANY } from "../actionTypes";
+import { ADD_COMPANY } from "../types";
 
 export function addCompanyReducer(state = [], action) {
   switch (action.type) {

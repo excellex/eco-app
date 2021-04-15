@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { featchFindAC } from "../redux/actionCreator";
+import { fetchFindAC } from "../redux/actionCreator";
 import { useHistory } from "react-router-dom";
 import { YMaps, Map, Placemark, ZoomControl } from "react-yandex-maps";
 import style from "./FindAdress.module.css";
@@ -10,7 +10,7 @@ function FindAdress(props) {
 
   const adress = useSelector((store) => store.adress);
   useEffect(() => {
-    dispatch(featchFindAC(props.props));
+    dispatch(fetchFindAC(props.props));
   }, []);
   const history = useHistory();
   const mapstate = {

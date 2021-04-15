@@ -2,10 +2,10 @@ import React, { useRef, useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { v4 as uuidv4 } from 'uuid';
 import {
-  featchAddCompanyAC,
+  fetchAddCompanyAC,
   fetchAddCategoryAC,
   fetchAddMaterialAC,
-} from '../../redux/actionCreator';
+} from '../../redux/actions';
 
 export default function CompanyRegistration({ data }) {
   const dispatch = useDispatch();
@@ -37,7 +37,7 @@ export default function CompanyRegistration({ data }) {
     };
 
     try {
-      dispatch(featchAddCompanyAC(obj)).catch((e) => setErrorState(true));
+      dispatch(fetchAddCompanyAC(obj)).catch((e) => setErrorState(true));
 
     } catch (e) {
       setErrorState(true);

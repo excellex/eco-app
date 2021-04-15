@@ -1,4 +1,4 @@
-import { ADD_CURRENT_POSITION } from '../actionTypes';
+import { ADD_CURRENT_POSITION } from '../types';
 
 export const getCurrentPositionReducer = (state = {}, action) => {
   switch (action.type) {

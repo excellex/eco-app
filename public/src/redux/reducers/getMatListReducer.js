@@ -1,4 +1,4 @@
-import { ADD_MATERIAL } from "../actionTypes";
+import { ADD_MATERIAL } from "../types";
 
 export const getMatListReducer = (state = [], action) => {
   switch (action.type) {

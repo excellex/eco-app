@@ -1,4 +1,4 @@
-import { ADD_CATEGORY } from '../actionTypes';
+import { ADD_CATEGORY } from '../types';
 
 export const getCatListReducer = (state = [], action) => {
   switch (action.type) {

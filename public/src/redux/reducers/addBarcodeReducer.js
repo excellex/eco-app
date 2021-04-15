@@ -1,4 +1,4 @@
-import { ADD_BARCODE } from '../actionTypes';
+import { ADD_BARCODE } from '../types';
 
 export function addBarcodeReducer(state = [], action) {
   switch (action.type) {

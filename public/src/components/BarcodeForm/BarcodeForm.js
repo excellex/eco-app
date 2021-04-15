@@ -7,7 +7,7 @@ import { taresURL } from '../../utils/fetchURL';
 import classes from './BarcodeForm.module.css';
 
 
-import { getReceptionPoints } from '../../redux/actionCreator';
+import { getReceptionPoints } from '../../redux/actions';
 
 
 const BarcodeForm = ({ scanned, setScanned }) => {

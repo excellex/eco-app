@@ -1,4 +1,4 @@
-import { FIND_ADRESS } from '../actionTypes';
+import { FIND_ADRESS } from '../types';
 
 export function findAdressReducer(state =[], action){
   switch (action.type) {

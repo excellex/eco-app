@@ -3,7 +3,7 @@ import BarcodeScannerComponent from 'react-webcam-barcode-scanner';
 import { Button, Col } from 'react-bootstrap';
 import { Route } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
-import { addBarcodeAC } from '../../redux/actionCreator';
+import { addBarcodeAC } from '../../redux/actions';
 import { FaCamera } from 'react-icons/fa';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import classes from './BarcodeScanner.module.css';

@@ -4,7 +4,7 @@ import BarcodeForm from '../BarcodeForm/BarcodeForm';
 import AddButton from '../AddButton';
 import BlicStart from '../BlicStart';
 import { Route } from 'react-router-dom';
-import { fetchAddCategoryAC, fetchAddMaterialAC } from '../../redux/actionCreator';
+import { fetchAddCategoryAC, fetchAddMaterialAC } from '../../redux/actions';
 import ReceptionPointsMap from '../ReceptionPointsMap/ReceptionPointsMap';
 import { store } from '../../redux/store';
 import Select from '../Select/Select';

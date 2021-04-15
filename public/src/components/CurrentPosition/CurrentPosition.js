@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
-import { addCurrentPositionAC } from '../../redux/actionCreator';
+import { addCurrentPositionAC } from '../../redux/actions';
 
 const CurrentPosition = () => {
   const dispatch = useDispatch();
