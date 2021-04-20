@@ -1,7 +1,5 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
-import { store } from '../../redux/store';
-import style from '../FindAdress.module.css';
 import { Map, Placemark, YMaps, ZoomControl } from 'react-yandex-maps';
 import classes from './ReceptionPointsMap.module.css'
 const ReceptionPointsMap = () => {

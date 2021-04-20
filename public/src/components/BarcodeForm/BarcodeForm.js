@@ -1,13 +1,8 @@
 import React, { useEffect, useRef, useState } from 'react';
-import { Alert, Form, Col } from 'react-bootstrap';
-
 import { useSelector, useDispatch } from 'react-redux';
-import { apiPost } from '../../utils/getFunctions';
-import { taresURL } from '../../utils/fetchURL';
+import { Form, Col } from 'react-bootstrap';
 import classes from './BarcodeForm.module.css';
-
-
-import { getReceptionPoints } from '../../redux/actions';
+import { fetchAddressesAC, setReceptionPointsAC } from '../../redux/actions';
 
 
 const BarcodeForm = ({ scanned, setScanned }) => {
@@ -21,11 +16,9 @@ const BarcodeForm = ({ scanned, setScanned }) => {
       return !state;
     });
     try {
-      apiPost(taresURL, { barcode })
-
-        // .then(data => console.log((data)))
-        .then(data => disptatch(getReceptionPoints(data)))
-        .catch(e => console.error(e.message)); // for not found
+      if (barcode) {
+        disptatch(fetchAddressesAC({barcode}))
+      }
     } catch (e) {
 
     }

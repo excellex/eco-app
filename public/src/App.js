@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Route, Switch } from 'react-router-dom';
 import IndexPage from './pages/IndexPage/IndexPage';
 import SignUpPage from './pages/SignUpPage/SignUpPage';
@@ -8,21 +8,26 @@ import Header from './components/Header/Header';
 import SignInPage from './pages/SignInPage/SignInPage';
 import './App.css';
 import { Container } from 'react-bootstrap';
-
+import { useDispatch } from 'react-redux';
+import { getCurrentPositionAC } from './redux/actions';
 
 function App() {
-  console.log(process.env.REACT_APP_TEST, process.env.REACT_APP_URL);
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(getCurrentPositionAC())
+  }, []);
+
   return (
-      <div style={{position: 'relative'}} >
-        <Header />
-        <Switch>
-          <Route exact path='/' component={IndexPage} />
-          <Route exact path='/signin' component={SignInPage} />
-          <Route exact path='/signup' component={SignUpPage} />
-          <Route exact path='/dashboard' component={Dashboard} />
-        </Switch>
-        {/* <Footer /> */}
-      </div>
+    <div style={{ position: 'relative' }} >
+      <Header />
+      <Switch>
+        <Route exact path='/' component={IndexPage} />
+        <Route exact path='/signin' component={SignInPage} />
+        <Route exact path='/signup' component={SignUpPage} />
+        <Route exact path='/dashboard' component={Dashboard} />
+      </Switch>
+      {/* <Footer /> */}
+    </div>
   );
 }
 

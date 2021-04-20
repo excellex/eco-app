@@ -55,17 +55,16 @@ module.exports.addTare = async (req, res) => {
 
 module.exports.addPlace = async (req, res) => {
   try {
-
     console.log('"/addplace" req.body', req.body);
     const { geometry, properties, modules, link, materials, categories } = req.body
     const mats = await Material.findOne({ name: materials })
-
     const cats = await Category.findOne({ name: categories })
     const obj = { geometry, properties, modules, link, materials: [mats._id], categories: [cats._id] }
     const newPlace = await Place.create(obj)
     mats.accept.push(newPlace._id)
     await mats.save()
+    return res.status(200).json({ success: true, message: 'New place has been added' })
   } catch (e) {
-    res.send({ success: false, message: 'Server error' })
+    res.json({ success: false, message: 'Server error' })
   }
 }

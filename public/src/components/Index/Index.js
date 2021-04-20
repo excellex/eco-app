@@ -2,9 +2,8 @@ import React, { useState } from 'react';
 import BarcodeScanner from '../BarcodeScanner/BarcodeScanner';
 import BarcodeForm from '../BarcodeForm/BarcodeForm';
 import AddButton from '../AddButton';
-import BlicStart from '../BlicStart';
 import { Route } from 'react-router-dom';
-import { fetchAddCategoryAC, fetchAddMaterialAC } from '../../redux/actions';
+import { fetchCategoriesAC, fetchAddMaterialAC, fetchMaterialsAC } from '../../redux/actions';
 import ReceptionPointsMap from '../ReceptionPointsMap/ReceptionPointsMap';
 import { store } from '../../redux/store';
 import Select from '../Select/Select';
@@ -13,7 +12,7 @@ import { useDispatch, useSelector } from 'react-redux';
 
 import classes from './Index.module.css';
 import CompanyRegistration from '../CompanyRegistration/CompanyRegistration';
-import CurrentPosition from '../CurrentPosition/CurrentPosition';
+// import CurrentPosition from '../CurrentPosition/CurrentPosition';
 
 const Index = () => {
   const [data, setData] = React.useState('Scan barcode');
@@ -23,8 +22,8 @@ const Index = () => {
   const barcode = useSelector(store => store.barcode.length)
 
   try {
-    dispatch(fetchAddCategoryAC());
-    dispatch(fetchAddMaterialAC());
+    dispatch(fetchCategoriesAC());
+    dispatch(fetchMaterialsAC());
   } catch (e) {}
   return (
     <div>
@@ -35,8 +34,7 @@ const Index = () => {
 
       {success ? <ReceptionPointsMap /> : null}
       {!success && barcode ? <Select /> : null}
-      {/*<BlicStart />*/}
-      <CurrentPosition />
+      {/* <CurrentPosition /> */}
     </div>
   );
 };

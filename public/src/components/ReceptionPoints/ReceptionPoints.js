@@ -1,5 +1,4 @@
 import React from 'react';
-import style from '../FindAdress.module.css';
 import { Map, Placemark, YMaps, ZoomControl } from 'react-yandex-maps';
 
 const ReceptionPoints = () => {
@@ -8,8 +7,8 @@ const ReceptionPoints = () => {
       <div className={style.flexfind}>
         <YMaps>
           <Map state={mapstate}>
-            {adress &&
-            adress.map((placemark, i) => (
+            {address &&
+            address.map((placemark, i) => (
               <Placemark key={placemark._id} {...placemark} />
             ))}
             <ZoomControl />

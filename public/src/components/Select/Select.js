@@ -1,11 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import style from './Select.module.css';
 import { materialsURL, addTareURL } from '../../utils/fetchURL';
-import { apiPost } from '../../utils/getFunctions';
-import { useSelector } from 'react-redux';
+import { apiPost } from '../../utils/fetches';
+import { useDispatch, useSelector } from 'react-redux';
 import { store } from '../../redux/store';
+import { addBarcodeAC, addTareAC } from '../../redux/actions';
 
 export default function Select() {
+  const dispatch = useDispatch();
   const data = useSelector(store => store.barcode);
   const materials = useSelector(store => store.materials);
   const categories = useSelector(store => store.categories);
@@ -30,7 +32,8 @@ export default function Select() {
       };
 
       try {
-        apiPost(addTareURL, body).catch(e => e);
+        dispatch(addTareAC(body))
+        // apiPost(addTareURL, body).catch(e => e);
       } catch (e) {
         setErrorState(true);
       }

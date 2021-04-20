@@ -1,18 +1,18 @@
 import { combineReducers } from "redux";
-import { findAdressReducer } from "./findAdressReducer";
-import { getMatListReducer } from "./getMatListReducer";
-import { addCompanyReducer } from "./addCompanyReducer";
-import { getCatListReducer } from "./getCatListReducer";
-import { addBarcodeReducer } from './addBarcodeReducer';
-import { getReceptionPoints } from './getReceptionPoints';
-import { getCurrentPositionReducer } from './getCurrentPositionReducer';
+import { addressReducer } from "./addressReducer";
+import { materialsReducer } from "./materialsReducer";
+import { companyReducer } from "./companyReducer";
+import { categoriesReducer } from "./categoriesReducer";
+import { barcodeReducer } from './barcodeReducer';
+import { receptionPointsReducer } from './receptionPointsReducer';
+import { currentPositionReducer } from './currentPositionReducer';
 
 export const rootReducer = combineReducers({
-  adress: findAdressReducer,
-  company: addCompanyReducer,
-  categories: getCatListReducer,
-  materials: getMatListReducer,
-  barcode: addBarcodeReducer,
-  receptionPoints: getReceptionPoints,
-  currentPosition: getCurrentPositionReducer,
+  // address: addressReducer,
+  company: companyReducer,
+  categories: categoriesReducer,
+  materials: materialsReducer,
+  barcode: barcodeReducer,
+  receptionPoints: receptionPointsReducer,
+  currentPosition: currentPositionReducer,
 });
