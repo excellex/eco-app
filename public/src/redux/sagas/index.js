@@ -4,6 +4,7 @@ import addressWatcher from './addressSaga';
 
 export default function* Saga() {
   yield all([
-    tareWatcher(), addressWatcher()
+    tareWatcher(), 
+    addressWatcher()
   ])
 };

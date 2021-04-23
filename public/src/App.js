@@ -3,11 +3,9 @@ import { Route, Switch } from 'react-router-dom';
 import IndexPage from './pages/IndexPage/IndexPage';
 import SignUpPage from './pages/SignUpPage/SignUpPage';
 import Dashboard from './pages/Dashboard/Dashboard';
-import Footer from './components/Footer/Footer';
 import Header from './components/Header/Header';
 import SignInPage from './pages/SignInPage/SignInPage';
 import './App.css';
-import { Container } from 'react-bootstrap';
 import { useDispatch } from 'react-redux';
 import { getCurrentPositionAC } from './redux/actions';
 
@@ -26,7 +24,6 @@ function App() {
         <Route exact path='/signup' component={SignUpPage} />
         <Route exact path='/dashboard' component={Dashboard} />
       </Switch>
-      {/* <Footer /> */}
     </div>
   );
 }

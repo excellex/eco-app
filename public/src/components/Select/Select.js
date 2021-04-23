@@ -1,10 +1,7 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import style from './Select.module.css';
-import { materialsURL, addTareURL } from '../../utils/fetchURL';
-import { apiPost } from '../../utils/fetches';
 import { useDispatch, useSelector } from 'react-redux';
-import { store } from '../../redux/store';
-import { addBarcodeAC, addTareAC } from '../../redux/actions';
+import { addTareAC } from '../../redux/actions';
 
 export default function Select() {
   const dispatch = useDispatch();
@@ -13,7 +10,6 @@ export default function Select() {
   const categories = useSelector(store => store.categories);
   const [selectedMaterial, setSelectedMaterial] = useState('');
   const [selectedCategory, setSelectedCategory] = useState('');
-  const [errorState, setErrorState] = useState(false);
 
   const selectedMaterialHandler = (event) => {
     setSelectedMaterial(event.target.value);
@@ -33,10 +29,7 @@ export default function Select() {
 
       try {
         dispatch(addTareAC(body))
-        // apiPost(addTareURL, body).catch(e => e);
-      } catch (e) {
-        setErrorState(true);
-      }
+      } catch (e) { }
     }
   };
 
@@ -53,11 +46,11 @@ export default function Select() {
             -- Материал --
           </option>
           {materials &&
-          materials.map((material) => (
-            <option key={material._id} value={material._id}>
-              {material.name}
-            </option>
-          ))}
+            materials.map((material) => (
+              <option key={material._id} value={material._id}>
+                {material.name}
+              </option>
+            ))}
         </select>
         <select
           name="category"
@@ -69,11 +62,11 @@ export default function Select() {
             -- Категория --
           </option>
           {categories &&
-          categories.map((category) => (
-            <option key={category._id} value={category._id}>
-              {category.name}
-            </option>
-          ))}
+            categories.map((category) => (
+              <option key={category._id} value={category._id}>
+                {category.name}
+              </option>
+            ))}
         </select>
       </div>
       <br />

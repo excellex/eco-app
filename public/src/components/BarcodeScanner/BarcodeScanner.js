@@ -1,7 +1,7 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import BarcodeScannerComponent from 'react-webcam-barcode-scanner';
-import { Button, Col } from 'react-bootstrap';
-import { useDispatch, useSelector } from 'react-redux';
+import { Button } from 'react-bootstrap';
+import { useDispatch } from 'react-redux';
 import { setBarcodeAC } from '../../redux/actions';
 import { FaCamera } from 'react-icons/fa';
 import 'bootstrap/dist/css/bootstrap.min.css';

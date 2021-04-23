@@ -1,20 +1,15 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { Form, Col } from 'react-bootstrap';
 import classes from './BarcodeForm.module.css';
-import { fetchAddressesAC, setReceptionPointsAC } from '../../redux/actions';
+import { fetchAddressesAC } from '../../redux/actions';
 
 
-const BarcodeForm = ({ scanned, setScanned }) => {
-  const [isEmpty, setIsEmpty] = useState(true);
+const BarcodeForm = () => {
   const disptatch = useDispatch();
   const barcode = useSelector(store => store.barcode);
   useEffect(() => {
 
-    setIsEmpty(state => {
-
-      return !state;
-    });
     try {
       if (barcode) {
         disptatch(fetchAddressesAC({barcode}))
@@ -24,31 +19,19 @@ const BarcodeForm = ({ scanned, setScanned }) => {
     }
 
   }, [barcode]);
-  const formValue = useRef();
   return (
     <>
       <Col md="12">
-
-        {isEmpty ? (
-          <Form>
+      <Form>
             <Form.Control
               type="text"
               readOnly
-              onChange={null}
-            />
-          </Form>
-        ) : (
-          <Form>
-            <Form.Control
-              ref={formValue}
-              type="number"
+              className={[classes.false, classes.inputForm]}
               value={barcode}
-              readOnly
               onChange={null}
-              className={[scanned ? null : classes.false, classes.inputForm]}
             />
           </Form>
-        )}
+
       </Col>
     </>
   );

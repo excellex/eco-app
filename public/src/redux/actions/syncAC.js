@@ -1,6 +1,6 @@
 import {
   SET_BARCODE  ,
-  GET_RECEPTION_POINTS,
+  SET_RECEPTION_POINTS,
   SET_CURRENT_POSITION,
   SET_MATERIAL,
   SET_CATEGORY
@@ -19,7 +19,7 @@ export const setCurrentPositionAC = (payload) => ({
 });
 
 export const setReceptionPointsAC = (payload) => ({
-  type: GET_RECEPTION_POINTS,
+  type: SET_RECEPTION_POINTS,
   payload,
 });
 

@@ -19,7 +19,7 @@ function* addressWorker(action) {
 }
 
 function* addCompanyWorker(action) {
-  const spots = yield apiPost(addPlaceURL, action.payload);
+  yield apiPost(addPlaceURL, action.payload);
 }
 
 export default function* watcher() {

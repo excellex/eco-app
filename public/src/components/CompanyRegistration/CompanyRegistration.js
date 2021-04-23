@@ -1,15 +1,10 @@
-import React, { useRef, useEffect, useState } from 'react';
+import React, { useRef } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { v4 as uuidv4 } from 'uuid';
-import {
-  fetchAddCompanyAC,
-  fetchAddCategoryAC,
-  fetchAddMaterialAC,
-} from '../../redux/actions';
+import { fetchAddCompanyAC } from '../../redux/actions';
 
-export default function CompanyRegistration({ data }) {
+export default function CompanyRegistration() {
   const dispatch = useDispatch();
-  const [errorState, setErrorState] = useState(false);
   const storeMaterials = useSelector((store) => store.materials);
   const storeCategories = useSelector((store) => store.categories);
   const currentPosition = useSelector(store => store.currentPosition);
@@ -23,7 +18,6 @@ export default function CompanyRegistration({ data }) {
 
   const inputHelper = (event) => {
     event.preventDefault();
-
     const obj = {
       geometry: [lat.current.value, long.current.value],
       properties: {
@@ -37,11 +31,8 @@ export default function CompanyRegistration({ data }) {
     };
 
     try {
-      dispatch(fetchAddCompanyAC(obj)).catch((e) => setErrorState(true));
-
-    } catch (e) {
-      setErrorState(true);
-    }
+      dispatch(fetchAddCompanyAC(obj)).catch((e) => e);
+    } catch (e) { }
   };
   return (
     <div>

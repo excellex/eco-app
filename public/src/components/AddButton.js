@@ -1,7 +1,7 @@
 import React from "react";
 import CompanyRegistration from "./CompanyRegistration/CompanyRegistration";
 
-function AddButton({ data }) {
+function AddButton() {
   return (
     <div>
       <button
@@ -37,7 +37,7 @@ function AddButton({ data }) {
               </button>
             </div>
             <div className="modal-body">
-              <CompanyRegistration data={data} />
+              <CompanyRegistration />
             </div>
           </div>
         </div>
