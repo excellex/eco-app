@@ -1,17 +1,20 @@
 .false {
-    margin-top: 1rem;
-    position: absolute;
-    right: 15px;
+  margin-top: 1rem;
+  position: absolute;
+  right: 15px;
 }
 
 .barcodeWrapper {
-    display: flex;
-    justify-content: center;
-
+  display: flex;
+  justify-content: center;
+}
+.barcodeWrapper video {
+  width: 90%;
+  max-height: 80vh;
 }
 
-@media screen and (max-width: 800px) {
-    .barcodeWrapper video {
-        width: 90%;
-    }
-}
+/* @media screen and (max-width: 800px) {
+  .barcodeWrapper video {
+    width: 90%;
+  }
+} */

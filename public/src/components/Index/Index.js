@@ -19,6 +19,7 @@ const Index = () => {
     dispatch(fetchCategoriesAC());
     dispatch(fetchMaterialsAC());
   } catch (e) {}
+  
   return (
     <div>
       <div className={scanned ? null : classes.false}>

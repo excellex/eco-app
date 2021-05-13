@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
-import style from './Select.module.css';
+import classes from './Select.module.css';
 import { useDispatch, useSelector } from 'react-redux';
 import { addTareAC } from '../../redux/actions';
+import { lightGreen } from '@material-ui/core/colors';
 
 export default function Select() {
   const dispatch = useDispatch();
@@ -32,15 +33,16 @@ export default function Select() {
       } catch (e) { }
     }
   };
-
+// console.log(style);
   return (
     <div>
-      <div>
+     <div className={classes.mapWrapper}>
         <select
           name="material"
-          id={style.material}
+          // id={style.material}
           onChange={selectedMaterialHandler}
           defaultValue={'DEFAULT'}
+        style={{  marginRight: '10px' }}
         >
           <option value="DEFAULT" disabled>
             -- Материал --
@@ -54,9 +56,10 @@ export default function Select() {
         </select>
         <select
           name="category"
-          id={style.category}
+          // id={style.category}
           onChange={selectedCategoryHandler}
           defaultValue={'DEFAULT'}
+        style={{  marginRight: '10px' }}
         >
           <option value="DEFAULT" disabled>
             -- Категория --
@@ -68,16 +71,16 @@ export default function Select() {
               </option>
             ))}
         </select>
-      </div>
       <br />
       <button
         type="button"
         className="btn btn-success"
         onClick={clickHandler}
-        style={{ marginBottom: '10px' }}
+        style={{ marginBottom: '10px', marginTop: '10px' }}
       >
         Добавить
       </button>
+      </div>
     </div>
   );
 }

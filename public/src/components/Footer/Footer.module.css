@@ -1,8 +1,9 @@
 .footer{
-    position: absolute;
+    position: relative;
     bottom: 0;
     width: 100%;
-    margin: auto;
+        margin-top: 25px;
+        /* margin: auto; */
 }
 .footer .container {
     text-align: center;
@@ -10,9 +11,9 @@
     margin-top: 25px;
 }
 
-@media screen and (max-width: 800px) {
+/* @media screen and (max-width: 800px) {
     .footer{
         position: relative;
         margin-top: 25px;
     }
-}
+} */

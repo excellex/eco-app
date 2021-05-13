@@ -1,8 +1,8 @@
-import {  put, takeEvery } from 'redux-saga/effects';
-import {  setCurrentPositionAC, setReceptionPointsAC } from '../actions';
-import { FETCH_ADDRESSES, FETCH_ADD_COMPANY, GET_CURRENT_POSITION} from '../types';
-import {  apiPost } from '../../utils/fetches';
-import {  addPlaceURL, taresURL } from '../../utils/fetchURL';
+import { put, takeEvery } from 'redux-saga/effects';
+import { setCurrentPositionAC, setReceptionPointsAC } from '../actions';
+import { FETCH_ADDRESSES, FETCH_ADD_COMPANY, GET_CURRENT_POSITION } from '../types';
+import { apiPost } from '../../utils/fetches';
+import { addPlaceURL, taresURL } from '../../utils/fetchURL';
 import { location } from '../../utils/location';
 
 function* positionWorker() {
